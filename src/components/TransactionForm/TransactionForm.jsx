@@ -29,7 +29,6 @@ export const TransactionForm = () => {
           placeholder="Коментар..."
         />
 
-        <InputWithLabel type="date" name="data" title="Дата" />
 
         <button type="submit" className={css["btn-form"]}>
           Додати

@@ -1,13 +1,14 @@
-import css from './Header.module.css';
+import css from "./Header.module.css";
+import { Container } from "../Container/Container";
 
 console.log(css);
 
 const Header = () => {
   return (
     <header>
-          <div className={ css.container}>
+      <Container>
         <h2>Журнал витрат</h2>
-      </div>
+      </Container>
     </header>
   );
 };

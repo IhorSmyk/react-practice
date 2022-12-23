@@ -3,7 +3,7 @@ import { TransactionsHistoryPage } from "./components/TransactionsHistoryPage/Tr
 import { costs, income } from "./data/transactions";
 
 function App() {
-  const activePage = "main"; // or 'income' or 'costs'
+  const activePage = "income"; // or 'income' or 'costs'
 
   switch (activePage) {
     case "main":
@@ -17,13 +17,6 @@ function App() {
     default:
       return null;
   }
-  // 	return (
-
-  // 	  <div className="App">
-  // 		  {activePage}
-  //       <MainPage />
-  //     </div>
-  //   );
 }
 
 export default App;

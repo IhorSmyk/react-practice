@@ -5,7 +5,7 @@ import { TransactionNavButtons } from "../TransactionNavButtons/TransactionNavBu
 const MainPage = () => {
   return (
     <>
-      <Header />
+      <Header title="Журнал витрат" />
       <TransactionForm />
       <TransactionNavButtons />
     </>

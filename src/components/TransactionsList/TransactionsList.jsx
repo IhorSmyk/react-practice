@@ -1,6 +1,17 @@
 import PropTypes from "prop-types";
+import moment from "moment";
 import { Section } from "../Section/Section";
 import sprite from "../../assets/icons/sprite.svg";
+import {
+  Item,
+  ContentWrapper,
+  DescrWrapper,
+  BtnWrapper,
+  BtnAction,
+} from "./TransactionsList.styled";
+import { Fragment } from "react";
+// import * as Q from "./TransactionsList.styled";
+// console.log(Q);
 
 export const TransactionsList = ({ transactions }) => {
   return (
@@ -8,34 +19,34 @@ export const TransactionsList = ({ transactions }) => {
       <ul>
         {transactions.map(({ id, date, time, sum, currency, comment }) => {
           return (
-            <>
-              <li key={id} class="item">
-                <div class="content-wrapper">
-                  <div class="descr-wrapper">
-                    <span class="date">
-                      {date}, {time}
+            <Fragment key={id}>
+              <Item>
+                <ContentWrapper>
+                  <DescrWrapper>
+                    <span className="date">
+                      {moment(date).format("dd D MMM YYYY")}, {time}
                     </span>
-                    <span class="comment">{comment}</span>
-                  </div>
-                  <div class="summ-wrapper">
-                    <span class="summ">{sum}</span>
-                    <span class="currency">{currency}</span>
-                  </div>
-                </div>
-                <div class="btn-wrapper">
-                  <button class="btn-action" type="button">
+                    <span className="comment">{comment}</span>
+                  </DescrWrapper>
+                  <DescrWrapper>
+                    <span className="summ">{sum}</span>
+                    <span className="currency">{currency}</span>
+                  </DescrWrapper>
+                </ContentWrapper>
+                <BtnWrapper>
+                  <BtnAction type="button">
                     <svg>
                       <use href={sprite + "#icon-edit-pencil"}></use>
                     </svg>
-                  </button>
-                  <button class="btn-action" type="button">
+                  </BtnAction>
+                  <BtnAction type="button">
                     <svg>
                       <use href={sprite + "#icon-trash"}></use>
                     </svg>
-                  </button>
-                </div>
-              </li>
-            </>
+                  </BtnAction>
+                </BtnWrapper>
+              </Item>
+            </Fragment>
           );
         })}
       </ul>
